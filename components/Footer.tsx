@@ -32,7 +32,7 @@ export default function Footer() {
             priority
             className="size-12 rounded-lg object-contain sm:size-14"
           />
-          <span className="hidden text-2xl font-extrabold tracking-normal text-brand-navy sm:inline lg:text-4xl uppercase font-bebas-neue">
+          <span className="hidden text-2xl font-extrabold tracking-normal text-white sm:inline lg:text-4xl uppercase font-bebas-neue">
             Techno<span className="text-brand-red-dark">Frost</span>
           </span>
         </Link>
