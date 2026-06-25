@@ -23,18 +23,19 @@ export default function Footer() {
     <footer className="bg-brand-bg text-white">
       <div className="mx-auto grid w-full max-w-420 gap-10 px-4 py-12 pb-28 sm:px-6 lg:grid-cols-[1.25fr_0.8fr_1fr_1fr] lg:px-10 lg:pb-12">
         <div>
-          <Link href="/" className="inline-flex items-center gap-3">
-            <Image
-              src={site.logo}
-              alt="TECHNOFROST logo"
-              width={56}
-              height={56}
-              className="size-12 rounded-md bg-white object-contain p-1"
-            />
-            <span className="text-3xl font-black uppercase tracking-normal">
-              Techno<span className="text-brand-red">Frost</span>
-            </span>
-          </Link>
+          <Link href="/" className="flex shrink-0 items-center">
+          <Image
+            src={site.logo}
+            alt="TECHNOFROST logo"
+            width={64}
+            height={64}
+            priority
+            className="size-12 rounded-lg object-contain sm:size-14"
+          />
+          <span className="hidden text-2xl font-extrabold tracking-normal text-brand-navy sm:inline lg:text-4xl uppercase font-bebas-neue">
+            Techno<span className="text-brand-red-dark">Frost</span>
+          </span>
+        </Link>
           <p className="mt-5 max-w-sm text-sm leading-7 text-brand-muted">{site.description}</p>
         </div>
 
