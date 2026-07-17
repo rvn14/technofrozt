@@ -1,9 +1,22 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { CTAButtonContent, ctaButtonClasses } from "@/components/CTAButton";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { services } from "@/data/services";
+import { site } from "@/data/site";
 
 type FormState = {
   name: string;
@@ -70,99 +83,157 @@ export default function ContactForm() {
       return;
     }
 
-    // TODO: Send this payload to a Next.js Route Handler or email provider.
+    const serviceLabel = serviceOptions.find((service) => service.value === form.serviceType)?.label;
+    const message = [
+      "Hello TECHNOFROST 👋",
+      "",
+      "I need help with a service.",
+      "",
+      `Name: ${form.name.trim()}`,
+      `Phone: ${form.phone.trim()}`,
+      `Service needed: ${serviceLabel ?? form.serviceType}`,
+      `Issue or requirement: ${form.message.trim()}`,
+    ].join("\n");
+
+    window.open(
+      `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
     setSubmitted(true);
-    setForm(initialState);
   }
 
   return (
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-md bg-white p-5 shadow-[0_20px_60px_rgba(4,20,43,0.09)] sm:p-6"
+      className=""
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Name" error={errors.name}>
-          <input
+        <Field id="contact-name" label="Name" error={errors.name}>
+          <Input
+            id="contact-name"
+            name="name"
+            autoComplete="name"
             value={form.name}
             onChange={(event) => updateField("name", event.target.value)}
-            className="h-12 w-full rounded-md border border-slate-200 bg-white px-4 text-sm text-brand-title outline-none transition focus:border-brand-blue focus:ring-3 focus:ring-brand-ice/40"
+            className="h-12 rounded-xl border-slate-200 bg-white px-4 text-brand-title shadow-none focus-visible:border-brand-blue focus-visible:ring-brand-ice/40"
             placeholder="Your name"
             aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? "contact-name-error" : undefined}
           />
         </Field>
 
-        <Field label="Phone" error={errors.phone}>
-          <input
+        <Field id="contact-phone" label="Phone" error={errors.phone}>
+          <Input
+            id="contact-phone"
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
             value={form.phone}
             onChange={(event) => updateField("phone", event.target.value)}
-            className="h-12 w-full rounded-md border border-slate-200 bg-white px-4 text-sm text-brand-title outline-none transition focus:border-brand-blue focus:ring-3 focus:ring-brand-ice/40"
+            className="h-12 rounded-xl border-slate-200 bg-white px-4 text-brand-title shadow-none focus-visible:border-brand-blue focus-visible:ring-brand-ice/40"
             placeholder="0767801583"
             aria-invalid={Boolean(errors.phone)}
+            aria-describedby={errors.phone ? "contact-phone-error" : undefined}
           />
         </Field>
 
-        <Field label="Service Type" error={errors.serviceType}>
-          <select
+        <Field id="contact-service" label="Service Type" error={errors.serviceType}>
+          <Select
             value={form.serviceType}
-            onChange={(event) => updateField("serviceType", event.target.value)}
-            className="h-12 w-full rounded-md border border-slate-200 bg-white px-4 text-sm text-brand-title outline-none transition focus:border-brand-blue focus:ring-3 focus:ring-brand-ice/40"
-            aria-invalid={Boolean(errors.serviceType)}
+            onValueChange={(value) => updateField("serviceType", value)}
           >
-            <option value="">Select a service</option>
-            {serviceOptions.map((service) => (
-              <option key={service.value} value={service.value}>
-                {service.label}
-              </option>
-            ))}
-          </select>
+            <SelectTrigger
+              id="contact-service"
+              className="h-12 w-full rounded-xl border-slate-200 bg-white px-4 text-brand-title shadow-none focus-visible:border-brand-blue focus-visible:ring-brand-ice/40"
+              aria-invalid={Boolean(errors.serviceType)}
+              aria-describedby={errors.serviceType ? "contact-service-error" : undefined}
+            >
+              <SelectValue placeholder="Select a service" />
+            </SelectTrigger>
+            <SelectContent
+              position="popper"
+              align="start"
+              className="rounded-xl border border-slate-200 bg-white p-0 text-brand-title shadow-xl"
+            >
+              <SelectGroup className="p-1">
+                {serviceOptions.map((service) => (
+                  <SelectItem
+                    key={service.value}
+                    value={service.value}
+                    className="rounded-lg focus:bg-brand-ice/20 focus:text-brand-navy"
+                  >
+                    {service.label}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </Field>
 
         <div className="hidden sm:block" aria-hidden="true" />
 
-        <Field label="Message" error={errors.message} className="sm:col-span-2">
-          <textarea
+        <Field
+          id="contact-message"
+          label="Message"
+          error={errors.message}
+          className="sm:col-span-2"
+        >
+          <Textarea
+            id="contact-message"
+            name="message"
             value={form.message}
             onChange={(event) => updateField("message", event.target.value)}
-            className="min-h-36 w-full resize-y rounded-md border border-slate-200 bg-white px-4 py-3 text-sm leading-6 text-brand-title outline-none transition focus:border-brand-blue focus:ring-3 focus:ring-brand-ice/40"
+            className="min-h-36 resize-y rounded-xl border-slate-200 bg-white px-4 py-3 leading-6 text-brand-title shadow-none focus-visible:border-brand-blue focus-visible:ring-brand-ice/40"
             placeholder="Tell us what is not working, appliance type, and your location."
             aria-invalid={Boolean(errors.message)}
+            aria-describedby={errors.message ? "contact-message-error" : undefined}
           />
         </Field>
       </div>
 
       {submitted ? (
-        <p className="mt-5 rounded-md border border-brand-blue/20 bg-brand-light px-4 py-3 text-sm font-semibold text-brand-deep">
-          Request captured on this page. Connect the form to email/API before production.
+        <p className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-brand-whatsapp-dark" role="status">
+          WhatsApp will open with your service details. Review the message and tap Send.
         </p>
       ) : null}
 
-      <button
+      <Button
         type="submit"
         className={ctaButtonClasses("primary", "mt-6 w-full sm:w-auto")}
       >
-        <CTAButtonContent icon={<Send className="size-4" />}>Submit Request</CTAButtonContent>
-      </button>
+        <CTAButtonContent icon={<FaWhatsapp className="size-4" />}>Send via WhatsApp</CTAButtonContent>
+      </Button>
     </form>
   );
 }
 
 function Field({
+  id,
   label,
   error,
   children,
   className,
 }: {
+  id: string;
   label: string;
   error?: string;
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <label className={className}>
-      <span className="mb-2 block text-sm font-black text-brand-title">{label}</span>
+    <div className={className}>
+      <Label htmlFor={id} className="mb-2 block text-sm font-black text-brand-title">
+        {label}
+      </Label>
       {children}
-      {error ? <span className="mt-2 block text-sm font-semibold text-brand-red-dark">{error}</span> : null}
-    </label>
+      {error ? (
+        <p id={`${id}-error`} className="mt-2 text-sm font-semibold text-brand-red-dark">
+          {error}
+        </p>
+      ) : null}
+    </div>
   );
 }

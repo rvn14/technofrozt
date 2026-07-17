@@ -1,3 +1,29 @@
+const quoteWhatsappMessage = [
+  "Hello TECHNOFROST 👋",
+  "",
+  "I would like a quotation for:",
+  "",
+  "Service:",
+  "Appliance / AC:",
+  "Requirement:",
+  "Location:",
+  "Preferred date:",
+].join("\n");
+
+const serviceWhatsappMessage = [
+  "Hello TECHNOFROST 👋",
+  "",
+  "I need help with a service.",
+  "",
+  "Service needed:",
+  "Appliance / AC brand and model:",
+  "Issue or requirement:",
+  "Location:",
+  "Preferred visit date:",
+  "",
+  "I can send photos if needed.",
+].join("\n");
+
 export const site = {
   name: "TECHNOFROST",
   displayName: "TechnoFrost",
@@ -7,11 +33,12 @@ export const site = {
   address: "TECHNOFROST – Kurakkanhena, Main Street, Kalpitiya",
   email: "techno_frost@yahoo.com",
   phones: ["0767801583", "0712801584"],
+  whatsappNumber: "94767801583",
   primaryPhoneHref: "tel:+94767801583",
   secondaryPhoneHref: "tel:+94712801584",
   emailHref: "mailto:techno_frost@yahoo.com",
-  whatsappHref:
-    "https://wa.me/94767801583?text=Hello%20TECHNOFROST%2C%20I%20need%20help%20with%20a%20cooling%20or%20appliance%20service.",
+  whatsappHref: `https://wa.me/94767801583?text=${encodeURIComponent(serviceWhatsappMessage)}`,
+  quoteWhatsappHref: `https://wa.me/94767801583?text=${encodeURIComponent(quoteWhatsappMessage)}`,
   directionsHref:
     "https://www.google.com/maps/search/?api=1&query=6PCX%2BGQG%2C%20Kurakkanhena%2C%20Main%20Street%2C%20Kalpitiya%2061354",
   mapEmbedHref:
@@ -21,7 +48,6 @@ export const site = {
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
 ];

@@ -60,7 +60,7 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
-                href={site.whatsappHref}
+                href={site.quoteWhatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-13 items-center justify-center gap-2.5 rounded-full bg-brand-whatsapp-dark px-6 text-sm font-bold text-white! shadow-[0_14px_32px_rgba(21,155,126,0.28)] transition-[background-color,box-shadow,transform] duration-200 hover:bg-brand-whatsapp hover:shadow-[0_18px_38px_rgba(21,155,126,0.34)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-ice/50 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"

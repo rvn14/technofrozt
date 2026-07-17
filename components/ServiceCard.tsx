@@ -20,12 +20,12 @@ export default function ServiceCard({ service, compact, className }: ServiceCard
       <Link
         href={`/services#${service.slug}`}
         className={cn(
-          "group flex h-full cursor-pointer flex-col overflow-hidden rounded-md bg-white p-2.5 shadow-[0_18px_46px_rgba(4,20,43,0.09)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(4,20,43,0.14)] hover:ring-1 hover:ring-brand-blue/28 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-ice/60",
+          "group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-2.5 shadow-[0_10px_30px_rgba(4,20,43,0.06)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(4,20,43,0.12)] hover:ring-1 hover:ring-brand-blue/28 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-ice/60",
           className,
         )}
         aria-label={`View ${service.title} service details`}
       >
-        <div className="relative aspect-16/10 overflow-hidden rounded-t-md bg-brand-light">
+        <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-brand-light">
           <Image
             src={imageSrc}
             alt={`${service.title} service image`}
@@ -37,7 +37,7 @@ export default function ServiceCard({ service, compact, className }: ServiceCard
         </div>
 
         <div className="relative flex flex-1 flex-col px-2 pb-2 pt-7">
-          <div className="absolute -top-7 left-2 grid size-14 place-items-center rounded-md bg-white text-brand-blue ">
+          <div className="absolute -top-7 left-2 grid size-14 place-items-center rounded-xl bg-white text-brand-blue shadow-sm ring-1 ring-slate-100">
             <Icon className="size-7" aria-hidden="true" />
           </div>
 
@@ -62,17 +62,15 @@ export default function ServiceCard({ service, compact, className }: ServiceCard
   return (
     <article
       className={cn(
-        "group flex h-full flex-col rounded-md bg-linear-to-br from-white to-brand-light/60 p-5 shadow-[0_18px_50px_rgba(4,20,43,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(4,20,43,0.13)]",
+        "group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(4,20,43,0.05)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(4,20,43,0.10)]",
         className,
       )}
     >
       <div className="mb-5 flex items-start justify-between gap-4">
-        <div className="grid size-13 place-items-center rounded-md bg-brand-light text-brand-blue ring-1 ring-brand-blue/10 transition group-hover:bg-brand-navy group-hover:text-brand-ice">
+        <div className="grid size-13 place-items-center rounded-xl bg-brand-light text-brand-blue ring-1 ring-brand-blue/10 transition group-hover:bg-brand-navy group-hover:text-brand-ice">
           <Icon className="size-7" aria-hidden="true" />
         </div>
-        <span className="rounded-md bg-brand-ice-light/80 px-2.5 py-1 text-xs font-black text-brand-deep">
-          {service.mark}
-        </span>
+
       </div>
 
       <h3 className="text-xl font-black tracking-normal text-brand-title">{service.title}</h3>

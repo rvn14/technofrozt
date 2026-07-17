@@ -41,7 +41,15 @@ export default function SectionHeader({
           <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">{description}</p>
         ) : null}
       </div>
-
+      {actionLabel && actionHref ? (
+        <CTAButton
+          href={actionHref}
+          variant="secondary"
+          className={cn("shrink-0", align === "center" && "md:hidden")}
+        >
+          {actionLabel}
+        </CTAButton>
+      ) : null}
     </div>
   );
 }
