@@ -1,12 +1,13 @@
 import { Navigation, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import CTAButton from "@/components/CTAButton";
+import MapPreview from "@/components/MapPreview";
 import { site } from "@/data/site";
 
 export default function ContactMapSection() {
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-10 lg:py-22">
-      <div className="mx-auto grid w-full max-w-420 gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
+      <div className="mx-auto grid w-full max-w-420 gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
         <div className="rounded-2xl p-6 lg:p-7">
           <p className="text-sm font-black uppercase tracking-normal text-brand-blue">
             Serving Kalpitiya and nearby areas
@@ -51,15 +52,7 @@ export default function ContactMapSection() {
           </div>
         </div>
 
-        <div className="relative min-h-112 overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5 shadow-[0_16px_45px_rgba(4,20,43,0.10)]">
-          <iframe
-            src={site.mapEmbedHref}
-            title={`Google map showing ${site.address}`}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="min-h-112 w-full rounded-xl border-0"
-          />
-        </div>
+        <MapPreview className="lg:min-h-104" />
       </div>
     </section>
   );

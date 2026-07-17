@@ -10,17 +10,22 @@ import { iconMap } from "@/components/icon-map";
 import { seoKeywords, site } from "@/data/site";
 import { processSteps, services } from "@/data/services";
 import Image from "next/image";
+import { socialImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  title: "A/C, Refrigeration & Appliance Repair in Kalpitiya",
   description:
     "TECHNOFROST provides premium A/C service, refrigeration repair, washing machine repair, auto A/C repair, motor rewinding, and spare parts support in Kalpitiya.",
   keywords: seoKeywords,
+  alternates: { canonical: "/" },
   openGraph: {
     title: "TECHNOFROST | A/C, Refrigeration & Appliance Repair in Kalpitiya",
     description: site.description,
     siteName: "TECHNOFROST",
     locale: "en_LK",
     type: "website",
+    url: "/",
+    images: [{ url: socialImage, alt: "TECHNOFROST cooling and appliance services" }],
   },
 };
 
@@ -135,37 +140,6 @@ export default function Home() {
       </section>
 
       <ContactMapSection />
-
-
-      {/* <section className="px-4 pb-16 sm:px-6 lg:px-10 lg:pb-22">
-        <div className="mx-auto w-full max-w-420">
-          <SectionHeader
-            eyebrow="Customer Trust"
-            title="Straightforward reviews from common service situations"
-            description="Short, realistic notes from the kinds of customers TECHNOFROST supports."
-          />
-          <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <article
-                key={testimonial.name}
-                className="rounded-lg bg-white p-6 shadow-[0_18px_55px_rgba(4,20,43,0.08)]"
-              >
-                <div className="mb-5 flex items-center justify-between gap-4">
-                  <Quote className="size-7 text-brand-blue" aria-hidden="true" />
-                  <div className="flex gap-1 text-brand-red-dark" aria-label="Five star review">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="size-4 fill-current" aria-hidden="true" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-sm leading-7 text-slate-600">&quot;{testimonial.text}&quot;</p>
-                <p className="mt-5 font-black text-brand-title">{testimonial.name}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
     </main>
   );
 }

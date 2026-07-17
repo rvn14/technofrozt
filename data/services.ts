@@ -4,55 +4,33 @@ export type IconName =
   | "washingMachine"
   | "cog"
   | "car"
-  | "calendarCheck"
   | "packageCheck"
   | "wrench"
   | "showerHead"
-  | "clock"
-  | "shield"
   | "mapPin"
   | "badge"
   | "snowflake"
   | "clipboard"
   | "search"
-  | "sparkles"
-  | "building"
-  | "truck"
-  | "gauge"
   | "phone"
   | "message"
-  | "mail"
-  | "navigation";
+  | "mail";
 
 export type Service = {
   slug: string;
   title: string;
   mark: string;
   icon: IconName;
-  image?: string;
+  image: string;
   shortDescription: string;
   description: string;
   details: string[];
   href: string;
 };
 
-type IconContent = {
+type ProcessStep = {
   title: string;
   description: string;
-  icon: IconName;
-  image?: string;
-};
-
-type ServiceDeal = {
-  title: string;
-  badge: string;
-  icon: IconName;
-  details: string;
-};
-
-type StatCard = {
-  value: string;
-  label: string;
   icon: IconName;
 };
 
@@ -187,67 +165,7 @@ export const services: Service[] = [
   },
 ];
 
-export const trustBenefits: IconContent[] = [
-  {
-    title: "Fast Response",
-    description: "Quick support for urgent cooling and appliance issues.",
-    icon: "clock",
-    image: "/images/fast-response.webp",
-  },
-  {
-    title: "Skilled Technicians",
-    description: "Experienced hands for A/C, refrigeration, and appliance repairs.",
-    icon: "shield",
-    image: "/images/skilled-technicians.webp",
-  },
-  {
-    title: "Genuine Spare Parts",
-    description: "Part guidance focused on durability and proper fit.",
-    icon: "packageCheck",
-    image: "/images/genuine-spare-parts.webp",
-  },
-  {
-    title: "Area Service Support",
-    description: "Home and business support around Kalpitiya and nearby areas.",
-    icon: "mapPin",
-    image: "/images/area-service-support.webp",
-  },
-];
-
-export const serviceDeals: ServiceDeal[] = [
-  {
-    title: "AC Full Service",
-    badge: "Popular",
-    icon: "airVent",
-    details: "Cleaning, cooling check, airflow check, and service guidance.",
-  },
-  {
-    title: "Refrigerator Gas Check",
-    badge: "Recommended",
-    icon: "refrigerator",
-    details: "Inspection for weak cooling, gas-related faults, and leaks.",
-  },
-  {
-    title: "Washing Machine Repair Visit",
-    badge: "Fast Booking",
-    icon: "washingMachine",
-    details: "Visit support for spin, drain, power, and noise problems.",
-  },
-  {
-    title: "Deep Freezer Inspection",
-    badge: "Business Support",
-    icon: "snowflake",
-    details: "Temperature, compressor, thermostat, and cooling checks.",
-  },
-  {
-    title: "Auto A/C Cooling Check",
-    badge: "Quick Check",
-    icon: "car",
-    details: "Vehicle A/C performance and airflow inspection support.",
-  },
-];
-
-export const processSteps: IconContent[] = [
+export const processSteps: ProcessStep[] = [
   {
     title: "Contact Us",
     description: "Call, WhatsApp, or send a service request with your appliance issue.",
@@ -268,38 +186,6 @@ export const processSteps: IconContent[] = [
     description: "Repair or service is completed with practical care advice.",
     icon: "badge",
   },
-];
-
-export const brandsServiced = [
-  "LG",
-  "Samsung",
-  "Panasonic",
-  "Singer",
-  "Abans",
-  "Haier",
-  "Whirlpool",
-  "General Appliances",
-];
-
-export const testimonials = [
-  {
-    name: "Home Customer",
-    text: "The technician checked our refrigerator carefully and explained the issue clearly before starting the repair.",
-  },
-  {
-    name: "Shop Owner",
-    text: "Our freezer needed quick attention, and the service visit helped us avoid a bigger business interruption.",
-  },
-  {
-    name: "Vehicle Owner",
-    text: "The auto A/C cooling check was straightforward and professional. Communication through WhatsApp was easy.",
-  },
-];
-
-export const stats: StatCard[] = [
-  { value: "Fast", label: "response support", icon: "gauge" },
-  { value: "7+", label: "service categories", icon: "sparkles" },
-  { value: "Home", label: "and business support", icon: "building" },
 ];
 
 export const faqs = [

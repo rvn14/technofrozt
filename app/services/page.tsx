@@ -13,12 +13,15 @@ import {
 } from "@/components/ui/accordion";
 import { seoKeywords, site } from "@/data/site";
 import { faqs, services } from "@/data/services";
+import StructuredData from "@/components/StructuredData";
+import { siteUrl, socialImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
     "Explore TECHNOFROST A/C installation, refrigerator repair, deep freezer repair, washing machine repair, motor rewinding, auto A/C repair, and spare parts services.",
   keywords: seoKeywords,
+  alternates: { canonical: "/services" },
   openGraph: {
     title: "TECHNOFROST Services",
     description:
@@ -26,12 +29,37 @@ export const metadata: Metadata = {
     siteName: "TECHNOFROST",
     locale: "en_LK",
     type: "website",
+    url: "/services",
+    images: [{ url: socialImage, alt: "TECHNOFROST repair and maintenance services" }],
   },
+};
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "TECHNOFROST Services",
+  itemListElement: services.map((service, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    url: `${siteUrl}/services#${service.slug}`,
+    name: service.title,
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
 };
 
 export default function ServicesPage() {
   return (
     <main className="bg-white text-brand-foreground">
+      <StructuredData data={[servicesSchema, faqSchema]} />
       <PageHero
         currentPage="Services"
         eyebrow="Cooling & Appliance Services"

@@ -6,20 +6,25 @@ import ContactForm from "@/components/ContactForm";
 import CTAButton from "@/components/CTAButton";
 import FinalCTA from "@/components/FinalCTA";
 import PageHero from "@/components/PageHero";
+import MapPreview from "@/components/MapPreview";
 import SectionHeader from "@/components/SectionHeader";
 import { seoKeywords, site } from "@/data/site";
+import { socialImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
     "Contact TECHNOFROST in Kalpitiya for A/C service, refrigeration repair, appliance repair, auto A/C support, and spare-part enquiries.",
   keywords: seoKeywords,
+  alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact TECHNOFROST",
     description: "Call, WhatsApp, or submit a service request to TECHNOFROST in Kalpitiya.",
     siteName: "TECHNOFROST",
     locale: "en_LK",
     type: "website",
+    url: "/contact",
+    images: [{ url: socialImage, alt: "Contact TECHNOFROST in Kalpitiya" }],
   },
 };
 
@@ -127,7 +132,7 @@ export default function ContactPage() {
       </section>
 
       <section className="px-5 py-14 sm:px-6 lg:px-10 lg:py-18">
-        <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start p-4 border border-slate-200 bg-brand-light">
+        <div className="mx-auto grid w-full max-w-7xl gap-8 rounded-2xl border border-slate-200 bg-brand-light p-4 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
           <div className="rounded-2xl p-6 lg:p-7">
             <p className="text-sm font-black uppercase tracking-normal text-brand-blue">Location</p>
             <h2 className="mt-3 text-3xl font-black text-brand-title">{site.address}</h2>
@@ -145,15 +150,7 @@ export default function ContactPage() {
               Get Directions
             </CTAButton>
           </div>
-          <div className="relative min-h-96 overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5 shadow-[0_16px_45px_rgba(4,20,43,0.10)]">
-            <iframe
-              src={site.mapEmbedHref}
-              title={`Google map showing ${site.address}`}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="min-h-96 w-full rounded-xl border-0"
-            />
-          </div>
+          <MapPreview className="lg:min-h-96" />
         </div>
       </section>
 

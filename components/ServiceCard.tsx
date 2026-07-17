@@ -13,7 +13,7 @@ type ServiceCardProps = {
 
 export default function ServiceCard({ service, compact, className }: ServiceCardProps) {
   const Icon = iconMap[service.icon];
-  const imageSrc = service.image ?? "/ac-service-hero.jpg";
+  const imageSrc = service.image;
 
   if (compact) {
     return (

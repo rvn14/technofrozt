@@ -107,7 +107,6 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className=""
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field id="contact-name" label="Name" error={errors.name}>
