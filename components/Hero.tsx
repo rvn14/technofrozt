@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight, MapPin, PackageCheck, Phone, Snowflake, Wrench, Zap } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import CTAButton from "@/components/CTAButton";
 import { site } from "@/data/site";
 
 const trustItems = [
@@ -59,23 +59,24 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
+              <CTAButton
                 href={site.quoteWhatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-13 items-center justify-center gap-2.5 rounded-full bg-brand-whatsapp-dark px-6 text-sm font-bold text-white! shadow-[0_14px_32px_rgba(21,155,126,0.28)] transition-[background-color,box-shadow,transform] duration-200 hover:bg-brand-whatsapp hover:shadow-[0_18px_38px_rgba(21,155,126,0.34)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-ice/50 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
+                variant="primary"
+                external
+                icon={<FaWhatsapp className="size-5" />}
+                className="w-full sm:w-auto"
               >
-                <FaWhatsapp className="size-5" aria-hidden="true" />
                 Get a Quote
-              </a>
+              </CTAButton>
 
-              <Link
+              <CTAButton
                 href="/services"
-                className="inline-flex min-h-13 items-center justify-center gap-2.5 rounded-full border border-white/25 bg-white/7 px-6 text-sm font-bold text-white! backdrop-blur-sm transition-[background-color,border-color,transform] duration-200 hover:border-white/45 hover:bg-white/13 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-ice/40 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
+                variant="secondary"
+                icon={<ArrowRight className="size-4" />}
+                className="w-full border-white/40 text-white! ring-white/20 after:bg-white hover:text-brand-navy! focus-visible:text-brand-navy! sm:w-auto"
               >
                 Explore Services
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
+              </CTAButton>
             </div>
 
             <div className="mt-5 inline-flex min-h-11 items-center gap-2.5 rounded-full px-4 text-xs font-semibold text-white/68 backdrop-blur-sm sm:text-sm">

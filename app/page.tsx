@@ -35,8 +35,7 @@ export default function Home() {
             eyebrow="OUR SERVICES"
             title="Choose the service you need"
             description="Installation, servicing, repairs and spare-part support for homes, businesses and vehicles across Kalpitiya."
-            actionLabel="View All Services"
-            actionHref="/services"
+            
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {services.map((service) => (
