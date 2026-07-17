@@ -80,6 +80,15 @@ body {
   overflow-x: clip;
 }
 
+html:has([data-preloader]) {
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+html:has([data-preloader])::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes cta-scale-up {
   0% {
     transform: scale(1);

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Bonbon, Geist, Geist_Mono, Inter } from "next/font/google";
 import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
+import Preloader from "@/components/Preloader";
 import Footer from "@/components/Footer";
 import NavBar from "../components/NavBar";
 import "./globals.css";
@@ -71,6 +72,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full bg-white text-slate-950">
+        <Preloader />
         <NavBar />
         <ReactLenis root>
           {children}

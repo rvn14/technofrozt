@@ -1,0 +1,62 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #030a18;
+  color: white;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 450ms ease, visibility 450ms ease;
+}
+
+.leaving { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.glow {
+  position: absolute;
+  width: min(34rem, 92vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(12,127,193,.2), rgba(7,54,108,.08) 42%, transparent 70%);
+  animation: breathe 1.8s ease-in-out infinite;
+}
+
+.content { position: relative; display: flex; flex-direction: column; align-items: center; padding: 2rem; }
+.truckWrapper { position: relative; display: flex; width: 230px; height: 118px; flex-direction: column; align-items: center; justify-content: flex-end; overflow: hidden; }
+.truckBody { width: 150px; margin-bottom: 7px; animation: suspension .72s ease-in-out infinite; filter: drop-shadow(0 12px 14px rgba(0,0,0,.3)); }
+.truckSvg { display: block; width: 100%; overflow: visible; }
+.cab, .window, .handle, .headlight, .bumper, .cargo, .rearBumper { stroke: #030a18; stroke-width: 2.5; }
+.cab { fill: #ee0a24; }
+.window { fill: #85d9ff; }
+.handle, .bumper { fill: #04142b; stroke-width: 2; }
+.headlight { fill: #fff6a8; stroke: #fff; stroke-width: 1.5; filter: drop-shadow(0 0 5px #fff6a8); }
+.cargo { fill: #07366c; }
+.rearBumper { fill: #b8c7d8; stroke-width: 2; }
+.tires { position: absolute; bottom: 0; display: flex; width: 150px; align-items: center; justify-content: space-between; padding: 0 12px 0 17px; }
+.tires svg { width: 28px; animation: wheel .72s linear infinite; }
+.tire { fill: #030a18; stroke: #000; stroke-width: 2.5; }
+.hub { fill: #b8c7d8; }
+.hubLine { fill: none; stroke: #07366c; stroke-width: 2; }
+.road { position: relative; bottom: 0; width: 100%; height: 2px; align-self: flex-end; border-radius: 3px; background: #85d9ff; box-shadow: 0 0 8px rgba(133,217,255,.45); }
+.road::before, .road::after { content: ""; position: absolute; right: -50%; height: 100%; border-left: 12px solid #030a18; border-radius: 3px; background: #85d9ff; animation: roadside 1.15s linear infinite; }
+.road::before { width: 26px; }
+.road::after { right: -70%; width: 12px; border-left-width: 6px; animation-delay: .35s; }
+.lampPost { position: absolute; right: -90%; bottom: 0; height: 105px; fill: #173e70; animation: roadside 1.15s linear infinite; }
+.brand { margin-top: 1.7rem; font-family: var(--font-bebas-neue), sans-serif; font-size: clamp(2rem, 7vw, 2.75rem); font-weight: 900; line-height: 1; letter-spacing: .07em; }
+.brand span:last-child { color: #ee0a24; }
+.tagline { margin-top: .55rem; color: #b9cfe2; font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.progress { width: 180px; height: 2px; margin-top: 1.35rem; overflow: hidden; border-radius: 99px; background: rgba(133,217,255,.16); }
+.progress span { display: block; width: 45%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, transparent, #85d9ff, #ee0a24); animation: progress 1.05s ease-in-out infinite; }
+
+@keyframes suspension { 0%,100% { transform: translateY(0) rotate(-.3deg); } 50% { transform: translateY(4px) rotate(.3deg); } }
+@keyframes wheel { to { transform: rotate(360deg); } }
+@keyframes roadside { to { transform: translateX(-410px); } }
+@keyframes progress { from { transform: translateX(-110%); } to { transform: translateX(330%); } }
+@keyframes breathe { 50% { transform: scale(1.08); opacity: .7; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .glow, .truckBody, .tires svg, .road::before, .road::after, .lampPost, .progress span { animation: none; }
+  .progress span { width: 100%; background: linear-gradient(90deg, #0c7fc1, #ee0a24); }
+}
