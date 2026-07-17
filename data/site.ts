@@ -4,7 +4,7 @@ export const site = {
   tagline: "Premium cooling, refrigeration, and appliance service support.",
   description:
     "TECHNOFROST provides reliable A/C, refrigeration, washing machine, motor rewinding, auto A/C, and spare parts services for homes and businesses around Kalpitiya.",
-  address: "6PCX+GQG, Kurakkanhena, Main Street, Kalpitiya 61354",
+  address: "TECHNOFROST – Kurakkanhena, Main Street, Kalpitiya",
   email: "techno_frost@yahoo.com",
   phones: ["0767801583", "0712801584"],
   primaryPhoneHref: "tel:+94767801583",

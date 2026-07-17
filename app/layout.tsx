@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Bonbon, Geist, Geist_Mono, Inter } from "next/font/google";
+import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
 import Footer from "@/components/Footer";
-import MobileStickyCTA from "@/components/MobileStickyCTA";
 import NavBar from "../components/NavBar";
 import "./globals.css";
 import ReactLenis from "lenis/react";
@@ -76,7 +76,7 @@ export default function RootLayout({
           {children}
         </ReactLenis>
         <Footer />
-        <MobileStickyCTA />
+        <FloatingWhatsAppButton />
       </body>
     </html>
   );

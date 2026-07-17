@@ -42,11 +42,6 @@ export default function SectionHeader({
         ) : null}
       </div>
 
-      {actionLabel && actionHref ? (
-        <CTAButton href={actionHref} variant="outline" className="shrink-0">
-          {actionLabel}
-        </CTAButton>
-      ) : null}
     </div>
   );
 }

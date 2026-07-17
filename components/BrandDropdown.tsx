@@ -175,7 +175,7 @@ export default function BrandDropdown() {
 
           setOpen((current) => !current);
         }}
-        className="h-12 w-72 cursor-pointer justify-start gap-4 rounded-none border-0 bg-brand-navy px-3 text-base ring-0 hover:bg-background hover:text-brand-navy focus:border-none focus:bg-transparent focus:text-background focus-visible:bg-transparent focus:ring-0 focus-visible:ring-0 aria-expanded:bg-background aria-expanded:text-brand-navy sm:w-80"
+        className="h-12 w-72 cursor-pointer justify-start gap-4 rounded-full border-0 bg-brand-navy px-4 text-base ring-0 hover:bg-background hover:text-brand-navy focus:border-none focus:bg-transparent focus:text-background focus-visible:bg-transparent focus:ring-0 focus-visible:ring-0 aria-expanded:bg-background aria-expanded:text-brand-navy sm:w-80"
       >
         <Menu className="size-5 stroke-[2.2]" aria-hidden="true" />
         <span className="min-w-0  text-left">All Categories</span>

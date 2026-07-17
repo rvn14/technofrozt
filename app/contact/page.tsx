@@ -5,7 +5,7 @@ import CTAButton from "@/components/CTAButton";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
 import { seoKeywords, site } from "@/data/site";
-import { Navigation, Phone } from "lucide-react";
+import { Mail, Navigation, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export const metadata: Metadata = {
@@ -47,6 +47,7 @@ export default function ContactPage() {
               description={<span>{site.phones.join(" / ")}</span>}
               actionLabel="Call Now"
               actionHref={site.primaryPhoneHref}
+              actionIcon={<Phone className="size-4" />}
             />
             <ContactCard
               title="WhatsApp"
@@ -55,7 +56,7 @@ export default function ContactPage() {
               actionLabel="WhatsApp"
               actionHref={site.whatsappHref}
               actionIcon={<FaWhatsapp className="size-4" />}
-              actionVariant="whatsapp"
+              actionVariant="primary"
               external
             />
             <ContactCard
@@ -64,6 +65,7 @@ export default function ContactPage() {
               description={<span>{site.email}</span>}
               actionLabel="Send Email"
               actionHref={site.emailHref}
+              actionIcon={<Mail className="size-4" />}
             />
             <ContactCard
               title="Location"
@@ -71,6 +73,7 @@ export default function ContactPage() {
               description={<span>{site.address}</span>}
               actionLabel="Get Directions"
               actionHref={site.directionsHref}
+              actionIcon={<Navigation className="size-4" />}
               external
             />
           </div>
@@ -97,12 +100,12 @@ export default function ContactPage() {
               quickest way to share your issue and location.
             </p>
             <div className="mt-7 grid gap-3">
-              <CTAButton href={site.primaryPhoneHref} variant="red" icon={<Phone className="size-4" />}>
+              <CTAButton href={site.primaryPhoneHref} variant="secondary" icon={<Phone className="size-4" />}>
                 Call Now
               </CTAButton>
               <CTAButton
                 href={site.whatsappHref}
-                variant="whatsapp"
+                variant="primary"
                 external
                 icon={<FaWhatsapp className="size-4" />}
               >
@@ -110,7 +113,7 @@ export default function ContactPage() {
               </CTAButton>
               <CTAButton
                 href={site.directionsHref}
-                variant="ice"
+                variant="secondary"
                 external
                 icon={<Navigation className="size-4" />}
               >

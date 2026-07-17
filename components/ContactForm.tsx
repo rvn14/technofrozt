@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Send } from "lucide-react";
+import { CTAButtonContent, ctaButtonClasses } from "@/components/CTAButton";
 import { services } from "@/data/services";
 
 type FormState = {
@@ -138,10 +139,9 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-brand-red-dark px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand-red/20 transition hover:bg-brand-red focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-red/25 sm:w-auto"
+        className={ctaButtonClasses("primary", "mt-6 w-full sm:w-auto")}
       >
-        Submit Request
-        <Send className="size-4" aria-hidden="true" />
+        <CTAButtonContent icon={<Send className="size-4" />}>Submit Request</CTAButtonContent>
       </button>
     </form>
   );

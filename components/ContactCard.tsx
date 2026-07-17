@@ -40,7 +40,7 @@ export default function ContactCard({
       <div
         className={cn(
           "mb-5 grid size-12 place-items-center rounded-md",
-          actionVariant === "whatsapp" ? "bg-brand-whatsapp text-white" : "bg-brand-navy text-brand-ice",
+          actionVariant === "primary" ? "bg-brand-whatsapp-dark text-white" : "bg-brand-navy text-brand-ice",
         )}
       >
         <Icon className="size-6" aria-hidden="true" />
@@ -50,7 +50,7 @@ export default function ContactCard({
       {actionLabel && actionHref ? (
         <CTAButton
           href={actionHref}
-          variant={actionVariant ?? "outline"}
+          variant={actionVariant ?? "secondary"}
           external={external}
           icon={actionIcon}
           className="mt-5 w-full"

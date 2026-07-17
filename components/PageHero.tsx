@@ -29,7 +29,7 @@ export default function PageHero({
           {description}
         </p>
         {primaryLabel && primaryHref ? (
-          <CTAButton href={primaryHref} variant="red" className="mt-8">
+          <CTAButton href={primaryHref} variant="primary" className="mt-8">
             {primaryLabel}
           </CTAButton>
         ) : null}

@@ -106,12 +106,12 @@ export default function ServicesPage() {
               parts support.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <CTAButton href={site.primaryPhoneHref} variant="red" icon={<Phone className="size-4" />}>
+              <CTAButton href={site.primaryPhoneHref} variant="secondary" icon={<Phone className="size-4" />}>
                 Call Now
               </CTAButton>
               <CTAButton
                 href={site.whatsappHref}
-                variant="whatsapp"
+                variant="primary"
                 external
                 icon={<FaWhatsapp className="size-4" />}
               >

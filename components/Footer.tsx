@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import CTAButton from "@/components/CTAButton";
 import { navLinks, site } from "@/data/site";
 import { services } from "@/data/services";
 

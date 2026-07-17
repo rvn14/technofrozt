@@ -26,8 +26,8 @@
   --color-brand-red-dark: #c90820;
   --color-brand-red-soft: #ff4a5d;
   --color-brand-purple: #7d1b82;
-  --color-brand-whatsapp: #25d366;
-  --color-brand-whatsapp-dark: #128c7e;
+  --color-brand-whatsapp: #25D366;
+  --color-brand-whatsapp-dark: #159B7E;
   --font-sans: var(--font-sans);
   --font-bonny: var(--font-bonny);
   --font-bebas-neue: var(--font-bebas-neue);
@@ -73,11 +73,25 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+@keyframes cta-scale-up {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 a {
@@ -86,8 +100,8 @@ a {
 }
 
 :root {
-  --brand-whatsapp: #25d366;
-  --brand-whatsapp-dark: #128c7e;
+  --brand-whatsapp: #25D366;
+  --brand-whatsapp-dark: #159B7E;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

@@ -127,12 +127,12 @@ export default function AboutPage() {
               </h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <CTAButton href={site.primaryPhoneHref} variant="red" icon={<Phone className="size-4" />}>
+              <CTAButton href={site.primaryPhoneHref} variant="secondary" icon={<Phone className="size-4" />}>
                 Call Now
               </CTAButton>
               <CTAButton
                 href={site.whatsappHref}
-                variant="whatsapp"
+                variant="primary"
                 external
                 icon={<FaWhatsapp className="size-4" />}
               >

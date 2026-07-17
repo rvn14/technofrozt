@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { Service } from "@/data/services";
 import { iconMap } from "@/components/icon-map";
-import CTAButton from "@/components/CTAButton";
 import { cn } from "@/lib/utils";
 
 type ServiceCardProps = {
@@ -16,13 +17,15 @@ export default function ServiceCard({ service, compact, className }: ServiceCard
 
   if (compact) {
     return (
-      <article
+      <Link
+        href={`/services#${service.slug}`}
         className={cn(
-          "group flex h-full flex-col overflow-hidden rounded-md bg-white p-2.5 shadow-[0_18px_46px_rgba(4,20,43,0.09)] transition duration-200 hover:shadow-[0_24px_70px_rgba(4,20,43,0.14)] hover:ring-brand-blue/28",
+          "group flex h-full cursor-pointer flex-col overflow-hidden rounded-md bg-white p-2.5 shadow-[0_18px_46px_rgba(4,20,43,0.09)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(4,20,43,0.14)] hover:ring-1 hover:ring-brand-blue/28 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-ice/60",
           className,
         )}
+        aria-label={`View ${service.title} service details`}
       >
-        <div className="relative aspect-[2.18] overflow-hidden rounded-t-md bg-brand-light">
+        <div className="relative aspect-16/10 overflow-hidden rounded-t-md bg-brand-light">
           <Image
             src={imageSrc}
             alt={`${service.title} service image`}
@@ -44,14 +47,15 @@ export default function ServiceCard({ service, compact, className }: ServiceCard
           <p className="mt-2 min-h-12 text-sm leading-6 text-slate-600">
             {service.shortDescription}
           </p>
-
-          <div className="mt-auto pt-4">
-            <CTAButton href={service.href} variant="ice" className="w-full">
-              Book Service
-            </CTAButton>
-          </div>
+          <span className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-bold text-brand-blue">
+            More details
+            <ArrowRight
+              className="size-4 transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1"
+              aria-hidden="true"
+            />
+          </span>
         </div>
-      </article>
+      </Link>
     );
   }
 
@@ -82,12 +86,6 @@ export default function ServiceCard({ service, compact, className }: ServiceCard
           </li>
         ))}
       </ul>
-
-      <div className="mt-auto pt-6">
-        <CTAButton href={service.href} variant="navy" className="w-full">
-          Book Service
-        </CTAButton>
-      </div>
     </article>
   );
 }

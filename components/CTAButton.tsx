@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type CTAButtonProps = {
@@ -12,82 +11,58 @@ type CTAButtonProps = {
   external?: boolean;
 };
 
-export type CTAButtonVariant = "red" | "navy" | "ice" | "outline" | "white" | "whatsapp";
-
-const variants: Record<CTAButtonVariant, { button: string; icon: string; label: string }> = {
-  red: {
-    button: "bg-brand-red text-white shadow-lg shadow-brand-red/20 hover:bg-brand-red-dark",
-    icon: "bg-brand-red-dark text-white group-active/button:bg-[#a7061a]",
-    label: "text-white!",
-  },
-  navy: {
-    button: "bg-brand-navy text-white shadow-lg shadow-brand-navy/20 hover:bg-brand-deep",
-    icon: "bg-brand-deep text-white group-active/button:bg-brand-panel",
-    label: "text-white!",
-  },
-  ice: {
-    button: "bg-brand-ice text-white shadow-lg shadow-brand-ice/20 hover:bg-brand-blue",
-    icon: "bg-brand-blue text-white group-active/button:bg-brand-blue-dark",
-    label: "text-white!",
-  },
-  outline: {
-    button: "bg-white text-brand-navy shadow-sm hover:bg-brand-navy",
-    icon: "bg-brand-navy text-white group-active/button:bg-brand-deep",
-    label: "text-brand-navy",
-  },
-  white: {
-    button: "bg-white text-brand-navy shadow-lg shadow-black/10 hover:bg-brand-ice-light",
-    icon: "bg-brand-ice-light text-brand-navy group-active/button:bg-brand-ice",
-    label: "text-brand-navy",
-  },
-  whatsapp: {
-    button: "bg-brand-whatsapp text-white shadow-lg shadow-brand-whatsapp/25 hover:bg-brand-whatsapp-dark",
-    icon: "bg-brand-whatsapp-dark text-white group-active/button:bg-[#0f766e]",
-    label: "text-white!",
-  },
+type CTAButtonContentProps = {
+  children: ReactNode;
+  icon?: ReactNode;
 };
+
+export type CTAButtonVariant = "primary" | "secondary";
+
+const variants: Record<CTAButtonVariant, string> = {
+  primary:
+    "border-transparent bg-brand-whatsapp-dark text-white! shadow-[0_12px_28px_rgba(21,155,126,0.26)] after:bg-brand-whatsapp hover:text-brand-navy! hover:shadow-[0_16px_34px_rgba(21,155,126,0.32)] focus-visible:text-brand-navy! focus-visible:ring-brand-whatsapp/35",
+  secondary:
+    "border-brand-blue/40 bg-transparent text-brand-blue! ring-1 ring-brand-blue/25 after:bg-brand-blue hover:text-white! hover:ring-brand-blue/50 focus-visible:text-white! focus-visible:ring-brand-blue/35",
+};
+
+export function ctaButtonClasses(
+  variant: CTAButtonVariant = "primary",
+  className?: string,
+) {
+  return cn(
+    "group/button relative isolate inline-flex min-h-12 max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-full border px-6 py-3 text-center text-sm font-bold transition-[box-shadow,transform,color] duration-300 ease-in-out after:absolute after:inset-y-0 after:left-1/2 after:-z-10 after:w-0 after:-translate-x-1/2 after:content-[''] after:transition-[width] after:duration-400 after:ease-in-out hover:after:w-full focus-visible:outline-none focus-visible:ring-3 focus-visible:after:w-full active:translate-y-px disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:transition-none motion-reduce:after:transition-none",
+    variants[variant],
+    className,
+  );
+}
+
+export function CTAButtonContent({ children, icon }: CTAButtonContentProps) {
+  return (
+    <span className="relative z-10 inline-flex min-w-0 items-center justify-center gap-2.5 whitespace-nowrap group-hover/button:animate-[cta-scale-up_0.3s_ease-in-out] group-focus-visible/button:animate-[cta-scale-up_0.3s_ease-in-out] motion-reduce:animate-none">
+      {icon ? (
+        <span className="grid size-5 shrink-0 place-items-center" aria-hidden="true">
+          {icon}
+        </span>
+      ) : null}
+      <span>{children}</span>
+    </span>
+  );
+}
 
 export default function CTAButton({
   href,
   children,
-  variant = "navy",
+  variant = "primary",
   className,
   icon,
   external,
 }: CTAButtonProps) {
-  const content = (
-    <>
-      <span
-        className={cn(
-          "relative z-10 min-w-0 truncate transition-opacity duration-300 ease-in-out group-hover/button:opacity-0 group-focus-visible/button:opacity-0",
-          variants[variant].label,
-        )}
-      >
-        {children}
-      </span>
-      <span
-        className={cn(
-          "absolute inset-y-0 right-0 z-20 flex w-11 items-center justify-center transition-[width,background-color] duration-300 ease-in-out group-hover/button:w-full group-focus-visible/button:w-full",
-          variants[variant].icon,
-        )}
-        aria-hidden="true"
-      >
-        <span className="grid size-5 place-items-center transition-transform duration-300 group-hover/button:scale-110 group-focus-visible/button:scale-110">
-          {icon ?? <ArrowRight className="size-4" />}
-        </span>
-      </span>
-    </>
-  );
-
-  const classes = cn(
-    "group/button relative isolate inline-flex min-h-11 max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-md py-2.5 pl-4 pr-14 text-center text-sm font-bold uppercase tracking-[1.5px] transition-[background-color,box-shadow,transform] duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-ice/50 active:translate-y-px",
-    variants[variant].button,
-    className,
-  );
+  const content = <CTAButtonContent icon={icon}>{children}</CTAButtonContent>;
+  const classes = ctaButtonClasses(variant, className);
 
   if (external) {
     return (
-      <a href={href} className={classes} target="_blank" rel="noreferrer">
+      <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
         {content}
       </a>
     );

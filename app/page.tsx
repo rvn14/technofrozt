@@ -6,14 +6,9 @@ import CTAButton from "@/components/CTAButton";
 import Hero from "@/components/Hero";
 import SectionHeader from "@/components/SectionHeader";
 import ServiceCard from "@/components/ServiceCard";
-import TrustBadge from "@/components/TrustBadge";
 import { iconMap } from "@/components/icon-map";
 import { seoKeywords, site } from "@/data/site";
-import {
-  processSteps,
-  services,
-  trustBenefits,
-} from "@/data/services";
+import { processSteps, services } from "@/data/services";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -34,20 +29,12 @@ export default function Home() {
     <main className="w-full bg-white text-brand-foreground">
       <Hero />
 
-      <section className="relative z-10 mt-10 px-4 pb-14 sm:px-6 lg:px-10">
-        <div className="mx-auto grid w-full max-w-420 gap-4 rounded-lg sm:grid-cols-2 lg:grid-cols-4">
-          {trustBenefits.map((benefit) => (
-            <TrustBadge key={benefit.title} {...benefit} />
-          ))}
-        </div>
-      </section>
-
       <section className="px-4 py-14 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto w-full max-w-420">
           <SectionHeader
-            eyebrow="Service Categories"
-            title="Choose the repair or cooling service you need"
-            description="A premium service catalog with fast booking paths for home appliances, refrigeration systems, auto A/C, and spare parts support."
+            eyebrow="OUR SERVICES"
+            title="Choose the service you need"
+            description="Installation, servicing, repairs and spare-part support for homes, businesses and vehicles across Kalpitiya."
             actionLabel="View All Services"
             actionHref="/services"
           />
@@ -73,8 +60,8 @@ export default function Home() {
           <div>
             <SectionHeader
               eyebrow="Why Choose TECHNOFROST"
-              title="Technical service with clear communication"
-              description="A clean, trustworthy repair experience for customers who need cooling systems and appliances back in working condition."
+              title="Reliable cooling support from installation to after service"
+              description="Get practical guidance, professional installation and dependable servicing for your cooling systems and appliances."
               className="mb-6"
             />
             <div className="grid gap-3">
@@ -91,18 +78,26 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <CTAButton href={site.primaryPhoneHref} variant="red" icon={<Phone className="size-4" />}>
-                Call {site.phones[0]}
-              </CTAButton>
+            <div className="mt-7 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <CTAButton
                 href={site.whatsappHref}
-                variant="whatsapp"
+                variant="primary"
                 external
                 icon={<FaWhatsapp className="size-4" />}
               >
-                WhatsApp Us
+                Chat on WhatsApp
               </CTAButton>
+              <a
+                href={site.primaryPhoneHref}
+                className="group/phone inline-flex min-h-11 items-center gap-2 rounded-full px-2 text-sm text-slate-600! transition-colors duration-200 hover:text-brand-navy! focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-ice/50"
+                aria-label="Call TECHNOFROST on 076 780 1583"
+              >
+                <Phone className="size-4 text-brand-blue" aria-hidden="true" />
+                <span>Prefer calling?</span>
+                <span className="font-bold text-brand-navy group-hover/phone:text-brand-blue group-hover/phone:underline! group-focus-visible/phone:text-brand-blue group-focus-visible/phone:underline! decoration-brand-blue/50 underline-offset-4">
+                  076 780 1583
+                </span>
+              </a>
             </div>
           </div>
         </div>

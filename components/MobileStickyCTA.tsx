@@ -43,9 +43,9 @@ function ActionLink({
   external?: boolean;
 }) {
   const classes = cn(
-    "flex min-h-12 flex-col items-center justify-center gap-1 rounded-md text-xs font-black transition active:translate-y-px",
+    "flex min-h-12 flex-col items-center justify-center gap-1 rounded-full text-xs font-black transition active:translate-y-px",
     variant === "whatsapp"
-      ? "bg-brand-whatsapp text-white shadow-lg shadow-brand-whatsapp/20"
+      ? "bg-brand-whatsapp-dark text-white! shadow-lg shadow-brand-whatsapp/20 hover:bg-brand-whatsapp"
       : "bg-brand-light text-brand-navy",
   );
 
