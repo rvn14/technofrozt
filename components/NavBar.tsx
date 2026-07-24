@@ -68,7 +68,7 @@ export default function NavBar() {
 
         <div
           className={cn(
-            "mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 transition-[height] duration-200 motion-reduce:transition-none sm:px-6 lg:px-8",
+            "mx-auto flex w-full items-center justify-between gap-4 px-5 transition-[height] duration-200 motion-reduce:transition-none sm:px-6 lg:px-8",
             scrolled ? "h-16" : "h-18 lg:h-20",
           )}
         >
@@ -138,15 +138,6 @@ export default function NavBar() {
           </div>
 
           <div className="ml-auto flex shrink-0 items-center gap-2 lg:hidden">
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Chat on WhatsApp (opens in a new tab)"
-              className="grid size-11 place-items-center rounded-full bg-brand-whatsapp-dark text-white! shadow-[0_8px_20px_rgba(21,155,126,0.24)] transition-colors hover:bg-brand-whatsapp focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-ice focus-visible:ring-offset-2"
-            >
-              <FaWhatsapp className="size-5" aria-hidden="true" />
-            </a>
             <button
               ref={menuButtonRef}
               type="button"

@@ -16,7 +16,8 @@ export default function ContactMapSection() {
             {site.address}
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
-            Contact us for AC installation, servicing, appliance repairs, auto A/C support and spare-part enquiries.
+            Contact us for AC installation, servicing, appliance repairs, hot water shower support,
+            and spare-part enquiries.
           </p>
           <div className="mt-7 flex flex-col items-start gap-4">
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">

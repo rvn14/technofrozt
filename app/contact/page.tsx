@@ -14,7 +14,7 @@ import { socialImage } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact TECHNOFROST in Kalpitiya for A/C service, refrigeration repair, appliance repair, auto A/C support, and spare-part enquiries.",
+    "Contact TECHNOFROST in Kalpitiya for A/C service, refrigeration repair, appliance repair, hot water shower repair, and spare-part enquiries.",
   keywords: seoKeywords,
   alternates: { canonical: "/contact" },
   openGraph: {
@@ -46,7 +46,7 @@ export default function ContactPage() {
       />
 
       <section className="px-5 py-14 sm:px-6 lg:px-10 lg:py-18">
-        <div className="mx-auto w-full max-w-7xl">
+        <div className="mx-auto w-full max-w-420">
           <SectionHeader
             eyebrow="Contact Options"
             title="Choose the easiest way to reach us"
@@ -93,7 +93,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-brand-light px-5 py-14 sm:px-6 lg:px-10 lg:py-18">
-        <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+        <div className="mx-auto grid w-full max-w-420 gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <SectionHeader
               eyebrow="Service Request"
@@ -132,7 +132,7 @@ export default function ContactPage() {
       </section>
 
       <section className="px-5 py-14 sm:px-6 lg:px-10 lg:py-18">
-        <div className="mx-auto grid w-full max-w-7xl gap-8 rounded-2xl border border-slate-200 bg-brand-light p-4 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
+        <div className="mx-auto grid w-full max-w-420 gap-8 rounded-2xl border border-slate-200 bg-brand-light p-4 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
           <div className="rounded-2xl p-6 lg:p-7">
             <p className="text-sm font-black uppercase tracking-normal text-brand-blue">Location</p>
             <h2 className="mt-3 text-3xl font-black text-brand-title">{site.address}</h2>

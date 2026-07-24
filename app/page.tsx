@@ -15,7 +15,7 @@ import { socialImage } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "A/C, Refrigeration & Appliance Repair in Kalpitiya",
   description:
-    "TECHNOFROST provides premium A/C service, refrigeration repair, washing machine repair, auto A/C repair, motor rewinding, and spare parts support in Kalpitiya.",
+    "TECHNOFROST provides premium A/C service, refrigeration repair, washing machine repair, hot water shower repair, and spare parts support in Kalpitiya.",
   keywords: seoKeywords,
   alternates: { canonical: "/" },
   openGraph: {
@@ -39,10 +39,10 @@ export default function Home() {
           <SectionHeader
             eyebrow="OUR SERVICES"
             title="Choose the service you need"
-            description="Installation, servicing, repairs and spare-part support for homes, businesses and vehicles across Kalpitiya."
+            description="Installation, servicing, repairs and spare-part support for homes and businesses across Kalpitiya."
             
           />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <ServiceCard key={service.slug} service={service} compact />
             ))}

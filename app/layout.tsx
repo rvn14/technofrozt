@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | TECHNOFROST",
   },
   description:
-    "TECHNOFROST provides A/C installation, refrigeration repair, washing machine repair, motor rewinding, auto A/C support, and spare parts around Kalpitiya.",
+    "TECHNOFROST provides A/C installation, refrigeration repair, washing machine repair, hot water shower repair, and spare parts around Kalpitiya.",
   keywords: seoKeywords,
   applicationName: site.name,
   authors: [{ name: site.name }],

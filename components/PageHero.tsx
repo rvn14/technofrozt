@@ -45,7 +45,7 @@ export default function PageHero({
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,20,43,0.94)_0%,rgba(4,20,43,0.86)_100%)] sm:bg-[linear-gradient(90deg,rgba(4,20,43,0.98)_0%,rgba(4,20,43,0.92)_42%,rgba(4,20,43,0.42)_72%,rgba(4,20,43,0.10)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-brand-ice/40 to-transparent" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 py-5 sm:px-6 sm:py-8 lg:px-8 lg:py-9">
+      <div className="relative mx-auto w-full max-w-420 px-5 py-5 sm:px-6 sm:py-8 lg:px-10 lg:py-9">
         <Breadcrumbs currentPage={currentPage} />
         <p className="mt-4 text-sm font-extrabold uppercase tracking-[0.08em] text-brand-ice sm:mt-5">
           {eyebrow}

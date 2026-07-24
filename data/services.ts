@@ -100,38 +100,6 @@ export const services: Service[] = [
     href: "/contact",
   },
   {
-    slug: "motor-rewinding",
-    title: "Motor Rewinding",
-    mark: "MR",
-    icon: "cog",
-    image: "/images/services/motor-rewinding.webp",
-    shortDescription: "Motor rewinding and technical repair support for selected appliances.",
-    description:
-      "Technical motor rewinding and related repair support for selected appliance and cooling system components.",
-    details: [
-      "Motor fault inspection",
-      "Rewinding and repair guidance",
-      "Support for cooling and appliance components",
-    ],
-    href: "/contact",
-  },
-  {
-    slug: "auto-ac-repair",
-    title: "Auto A/C Repair",
-    mark: "AA",
-    icon: "car",
-    image: "/images/services/auto-ac-repair.webp",
-    shortDescription: "Vehicle A/C cooling checks, leak checks, and service support.",
-    description:
-      "Auto A/C inspection and service support for cooling performance, airflow, and common vehicle A/C faults.",
-    details: [
-      "Cooling performance inspection",
-      "Airflow and gas-related checks",
-      "Service guidance for vehicle owners",
-    ],
-    href: "/contact",
-  },
-  {
     slug: "hot-water-shower-repair",
     title: "Hot Water Shower Repair",
     mark: "HW",

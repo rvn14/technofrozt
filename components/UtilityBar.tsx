@@ -18,7 +18,7 @@ export default function UtilityBar({ collapsed }: { collapsed: boolean }) {
           : "max-h-10 opacity-100",
       )}
     >
-      <div className="mx-auto flex min-h-10 w-full max-w-7xl items-center justify-between gap-6 px-8 text-xs font-medium">
+      <div className="mx-auto flex min-h-10 w-full  items-center justify-between gap-6 px-8 text-xs font-medium">
         <a
           href={site.directionsHref}
           target="_blank"

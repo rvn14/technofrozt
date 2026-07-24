@@ -10,7 +10,7 @@ const footerServiceSlugs = [
   "refrigerator-repair",
   "deep-freezer-repair",
   "washing-machine-repair",
-  "auto-ac-repair",
+  "hot-water-shower-repair",
 ];
 
 const footerServices = footerServiceSlugs

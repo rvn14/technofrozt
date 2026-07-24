@@ -16,7 +16,7 @@ export default function FinalCTA({
 }: FinalCTAProps) {
   return (
     <section className="px-5 py-14 sm:px-6 lg:px-10 lg:py-18">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-7 rounded-2xl bg-brand-navy px-6 py-8 text-white shadow-[0_18px_50px_rgba(4,20,43,0.12)] sm:px-8 lg:flex-row lg:items-center lg:px-10">
+      <div className="mx-auto flex w-full max-w-420 flex-col items-start justify-between gap-7 rounded-2xl bg-brand-navy px-6 py-8 text-white shadow-[0_18px_50px_rgba(4,20,43,0.12)] sm:px-8 lg:flex-row lg:items-center lg:px-10">
         <div className="max-w-2xl">
           <p className="text-sm font-extrabold uppercase tracking-[0.08em] text-brand-ice">
             Need help?

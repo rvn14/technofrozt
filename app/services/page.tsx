@@ -19,13 +19,13 @@ import { siteUrl, socialImage } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore TECHNOFROST A/C installation, refrigerator repair, deep freezer repair, washing machine repair, motor rewinding, auto A/C repair, and spare parts services.",
+    "Explore TECHNOFROST A/C installation, refrigerator repair, deep freezer repair, washing machine repair, hot water shower repair, and spare parts services.",
   keywords: seoKeywords,
   alternates: { canonical: "/services" },
   openGraph: {
     title: "TECHNOFROST Services",
     description:
-      "A/C, refrigeration, washing machine, motor rewinding, auto A/C, and spare parts service support in Kalpitiya.",
+      "A/C, refrigeration, washing machine, hot water shower, and spare parts service support in Kalpitiya.",
     siteName: "TECHNOFROST",
     locale: "en_LK",
     type: "website",
@@ -64,7 +64,7 @@ export default function ServicesPage() {
         currentPage="Services"
         eyebrow="Cooling & Appliance Services"
         title="Choose the right service for your equipment"
-        description="Explore installation, maintenance, repair, and spare-part support for homes, businesses, and vehicles around Kalpitiya."
+        description="Explore installation, maintenance, repair, and spare-part support for homes and businesses around Kalpitiya."
         primaryLabel="Chat on WhatsApp"
         primaryHref={site.whatsappHref}
         primaryExternal
@@ -75,13 +75,13 @@ export default function ServicesPage() {
       />
 
       <section id="service-categories" className="scroll-mt-28 px-5 py-14 sm:px-6 lg:px-10 lg:py-18">
-        <div className="mx-auto w-full max-w-7xl">
+        <div className="mx-auto w-full max-w-420">
           <SectionHeader
             eyebrow="Service Categories"
             title="Choose the service category you need"
             description="Select a category to jump directly to its scope and common service requirements."
           />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <ServiceCard key={service.slug} service={service} compact />
             ))}
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-brand-light px-5 py-14 sm:px-6 lg:px-10 lg:py-18">
-        <div className="mx-auto w-full max-w-7xl">
+        <div className="mx-auto w-full max-w-420">
           <SectionHeader
             eyebrow="Service Details"
             title="What each service can include"
@@ -107,7 +107,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-brand-navy px-5 py-14 text-white sm:px-6 lg:px-10 lg:py-18">
-        <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+        <div className="mx-auto grid w-full max-w-420 gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div>
             <p className="text-sm font-black uppercase tracking-normal text-brand-ice">FAQ</p>
             <h2 className="mt-3 text-3xl font-black sm:text-4xl">Common service questions</h2>

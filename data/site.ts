@@ -29,7 +29,7 @@ export const site = {
   displayName: "TechnoFrost",
   tagline: "Premium cooling, refrigeration, and appliance service support.",
   description:
-    "TECHNOFROST provides reliable A/C, refrigeration, washing machine, motor rewinding, auto A/C, and spare parts services for homes and businesses around Kalpitiya.",
+    "TECHNOFROST provides reliable A/C, refrigeration, washing machine, hot water shower, and spare parts services for homes and businesses around Kalpitiya.",
   address: "TECHNOFROST – Kurakkanhena, Main Street, Kalpitiya",
   email: "techno_frost@yahoo.com",
   phones: ["0767801583", "0712801584"],
@@ -60,8 +60,6 @@ export const seoKeywords = [
   "refrigerator repair Kalpitiya",
   "deep freezer repair",
   "washing machine repair",
-  "auto AC repair",
-  "motor rewinding",
   "hot water shower repair",
   "appliance spare parts Sri Lanka",
 ];
